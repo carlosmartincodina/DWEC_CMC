@@ -4,14 +4,14 @@ let pelicula = document.getElementById("idPelicula")
 let botonEnviar = document.getElementById("idEnviar").addEventListener("click",prueba)
 
 function prueba() {
-    let aficiones = [deporte.value, serie.value, pelicula.value]
+    let aficiones = {"deporte": deporte, "serie": serie, "pelicula": pelicula}
 
     for (let i = 0; i<aficiones.length;i++) {
             if (aficiones[i] != "") {
-            let lista = document.querySelector(`#lista${aficiones[i]}`)
+            let lista = document.querySelector(`#lista${aficiones[i].value}`)
             let nuevoElemento = document.createElement("a")
             nuevoElemento.innerHTML = "<br>"+aficiones[i]
-            listadeporte.appendChild(nuevoElemento)
+            lista`${aficiones[i]}`.appendChild(nuevoElemento)
             }
     }
     
