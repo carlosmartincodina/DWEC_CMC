@@ -1,18 +1,29 @@
-let deporte = document.getElementById("idDeporte")
-let serie = document.getElementById("idSerie")
-let pelicula = document.getElementById("idPelicula")
-let botonEnviar = document.getElementById("idEnviar").addEventListener("click",prueba)
+document.getElementById("idEnviar").addEventListener("click",prueba)
+
 
 function prueba() {
-    let aficiones = {"deporte": deporte, "serie": serie, "pelicula": pelicula}
+    let aficiones = new Map()
+    let deporte = document.querySelector("#idDeporte").value
+    let serie = document.querySelector("#idSerie").value
+    let pelicula = document.querySelector("#idPelicula").value
 
-    for (let i = 0; i<aficiones.length;i++) {
-            if (aficiones[i] != "") {
-            let lista = document.querySelector(`#lista${aficiones[i].value}`)
-            let nuevoElemento = document.createElement("a")
-            nuevoElemento.innerHTML = "<br>"+aficiones[i]
-            lista`${aficiones[i]}`.appendChild(nuevoElemento)
-            }
+    if (deporte.length != 0) {
+    aficiones.set("deporte", deporte)
+    }
+    if (serie.length != 0) {
+    aficiones.set("serie", serie)
+    }
+    if (pelicula.length != 0) {
+    aficiones.set("pelicula", pelicula)
     }
     
+    aficiones.forEach((valorInput, clave) => {
+        let crearHijo = document.createElement("a")
+        crearHijo.innerHTML = "<br>"+valorInput
+        let recuperarPadre = document.querySelector(`#lista${clave}`);
+        if (recuperarPadre) {
+            recuperarPadre.appendChild(crearHijo);
+        }
+        
+    })    
 }
