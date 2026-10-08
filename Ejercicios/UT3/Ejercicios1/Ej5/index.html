@@ -12,14 +12,14 @@
 <body>
     <div class="form-container">
       <form id="travelForm">
-        <input type="text" id="origen" name="origen" placeholder="Origen" required />
+        <input type="text" id="origen" name="origen" placeholder="Origen" />
   
         <button type="button" id="swapButton" class="icon-button" title="Intercambiar">
             <i class="fas fa-arrows-left-right"></i>
           </button>
   
-        <input type="text" id="destino" name="destino" placeholder="Destino" required />
-        <input type="date" id="fechaIda" name="fechaIda" required />
+        <input type="text" id="destino" name="destino" placeholder="Destino" />
+        <input type="date" id="fechaIda" name="fechaIda" />
         <input type="date" id="fechaVuelta" name="fechaVuelta"/>
   
         <label class="checkbox">
@@ -27,7 +27,7 @@
           Solo Ida
         </label>
   
-        <button type="submit">Buscar</button>
+        <button type="submit" id="idBuscar">Buscar</button>
       </form>
   
       <div id="errorMensaje" class="error-mensaje"></div>
