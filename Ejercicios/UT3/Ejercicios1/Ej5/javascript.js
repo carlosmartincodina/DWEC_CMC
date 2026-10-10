@@ -42,7 +42,6 @@ function buscarTrayectos(event) {
     let anyoActual = new Date().getFullYear().toString();
     let fechaActual = `${anyoActual}-${mesActual}-${diaActual}`
     //Fin traduccion de fechas
-
     //Inicio comprobación de que fecha de ida no sea anterior a la actual, y viceversa
     let checkBoxSoloIda = document.getElementById("soloIda")
     if (campoFechaIdaFormat < fechaActual || (!checkBoxSoloIda.checked && campoFechaVueltaFormat < campoFechaIdaFormat)) {
@@ -63,6 +62,7 @@ function buscarTrayectos(event) {
         resDestino.innerHTML = campoDestino.value
         resFechaIda.innerHTML = campoFechaIdaFormat
         // Si hay fecha de vuelta, la ponemos
+
         if (!checkBoxSoloIda.checked && campoFechaVueltaFormat != "") { 
         resFechaVuelta.innerHTML = campoFechaVueltaFormat
         }
