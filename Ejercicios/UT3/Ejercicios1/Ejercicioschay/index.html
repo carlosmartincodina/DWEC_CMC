@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios DOM - Práctica 1</title>
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+    <h1>Ejercicio 1: Lista de tareas</h1>
+    <p>Crea un programa que permita añadir tareas a una lista ordenada.</p>
+    <p>Al pulsar el botón "Añadir tarea", el texto del input debe añadirse como un nuevo elemento de la lista.</p>
+    <p>Si el campo está vacío, no se debe añadir nada.</p>
+
+    <input type="text" id="tarea" placeholder="Introduce una tarea">
+    <button id="anadirTarea">Añadir tarea</button>
+    <ol id="listaTareas"></ol>
+
+    <hr>
+
+    <h1>Ejercicio 2: Números aleatorios</h1>
+    <p>Crea un programa que genere números aleatorios entre 1 y 100.</p>
+    <p>Cada vez que se pulse el botón, se añadirá un nuevo número a la lista.</p>
+    <p>Añade también un botón para borrar todos los números de la lista.</p>
+
+    <button id="generarNumero">Generar número</button>
+    <button id="borrarNumeros">Borrar números</button>
+    <ul id="listaNumeros"></ul>
+
+    <hr>
+
+    <h1>Ejercicio 3: Crear casillas de verificación</h1>
+    <p>Introduce un número y pulsa el botón para crear esa cantidad de checkbox.</p>
+    <p>Cada checkbox debe tener una etiqueta con su número correspondiente.</p>
+    <p>Si introduces un número inferior a 1 o un valor no válido, muestra un mensaje de error mediante alert.</p>
+
+    <input type="number" id="cantidad" min="1" placeholder="Cantidad de checkbox">
+    <button id="crearCheckbox">Crear checkbox</button>
+    <div id="contenedorCheckbox"></div>
+
+    <hr>
+
+    <h1>Ejercicio 4: Mis asignaturas favoritas</h1>
+    <p>Introduce el nombre de una asignatura y su nota.</p>
+    <p>Al pulsar "Añadir asignatura", se debe crear un elemento que muestre el nombre y la nota.</p>
+    <p>No se deben permitir asignaturas repetidas.</p>
+    <p>Utiliza un Set para almacenar las asignaturas introducidas.</p>
+
+    <label for="asignatura">Asignatura:</label>
+    <input type="text" id="asignatura">
+
+    <label for="nota">Nota:</label>
+    <input type="number" id="nota" min="0" max="10" step="0.1">
+
+    <button id="anadirAsignatura">Añadir asignatura</button>
+    <ul id="listaAsignaturas"></ul>
+
+    <hr>
+
+    <h1>Ejercicio 5: Formulario de búsqueda de viajes</h1>
+    <p>Crea un formulario para buscar viajes entre dos ciudades.</p>
+    <p>Requisitos:</p>
+    <ul>
+        <li>El origen y el destino son obligatorios.</li>
+        <li>La fecha de ida no puede ser anterior al día actual.</li>
+        <li>Si "Solo ida" está marcado, la fecha de vuelta debe deshabilitarse.</li>
+        <li>Si no está marcado, la fecha de vuelta debe ser igual o posterior a la fecha de ida.</li>
+        <li>Los errores deben mostrarse mediante alert.</li>
+        <li>Si los datos son válidos, muestra la búsqueda en el área de resultados.</li>
+        <li>Después de una búsqueda válida, limpia el formulario.</li>
+    </ul>
+
+    <form id="formularioViaje">
+        <label for="origen">Origen:</label>
+        <input type="text" id="origen">
+
+        <label for="destino">Destino:</label>
+        <input type="text" id="destino">
+
+        <label for="fechaIda">Fecha de ida:</label>
+        <input type="date" id="fechaIda">
+
+        <label for="fechaVuelta">Fecha de vuelta:</label>
+        <input type="date" id="fechaVuelta">
+
+        <label for="soloIda">Solo ida</label>
+        <input type="checkbox" id="soloIda">
+
+        <button type="submit" id="buscarViaje">Buscar viaje</button>
+    </form>
+
+    <h2>Resultados de la búsqueda</h2>
+    <div id="resultadosViaje"></div>
+
+    <hr>
+
+    <h1>Ejercicio 6: Lista de la compra</h1>
+    <p>Crea una lista de la compra que permita añadir productos.</p>
+    <p>Los productos deben aparecer ordenados alfabéticamente.</p>
+    <p>Al pulsar sobre un producto, este debe eliminarse de la lista.</p>
+    <p>No se deben añadir productos vacíos ni productos repetidos.</p>
+
+    <input type="text" id="producto" placeholder="Introduce un producto">
+    <button id="anadirProducto">Añadir producto</button>
+    <ul id="listaCompra"></ul>
+
+    <hr>
+
+    <h1>Ejercicio 7: Cambiar colores</h1>
+    <p>Crea un programa que muestre tres párrafos.</p>
+    <p>Al pulsar el botón "Cambiar color", los párrafos deben cambiar al siguiente color de esta secuencia: rojo, verde, azul.</p>
+    <p>Al llegar al azul, el siguiente clic debe volver al rojo.</p>
+
+    <p id="parrafo1">Este es el primer párrafo.</p>
+    <p id="parrafo2">Este es el segundo párrafo.</p>
+    <p id="parrafo3">Este es el tercer párrafo.</p>
+
+    <button id="cambiarColor">Cambiar color</button>
+
+    <hr>
+
+    <h1>Ejercicio 8: Mostrar y ocultar contenido</h1>
+    <p>Crea un botón que permita mostrar u ocultar un texto.</p>
+    <p>Cuando el texto esté visible, el botón debe mostrar "Ocultar texto".</p>
+    <p>Cuando el texto esté oculto, el botón debe mostrar "Mostrar texto".</p>
+
+    <button id="mostrarOcultar">Ocultar texto</button>
+    <p id="textoOculto">Este texto debe poder mostrarse y ocultarse al pulsar el botón.</p>
+
+    <hr>
+
+    <h1>Ejercicio 9: Contador</h1>
+    <p>Crea un contador que empiece en cero.</p>
+    <p>Debe tener tres botones: incrementar, decrementar y reiniciar.</p>
+    <p>El valor del contador debe actualizarse sin recargar la página.</p>
+
+    <h2 id="contador">0</h2>
+    <button id="incrementar">Incrementar</button>
+    <button id="decrementar">Decrementar</button>
+    <button id="reiniciar">Reiniciar</button>
+
+    <hr>
+
+    <h1>Ejercicio 10: Registro de alumnos</h1>
+    <p>Crea un formulario para registrar alumnos con su nombre y edad.</p>
+    <p>Al pulsar "Registrar", se debe añadir el alumno a una tabla con las columnas Nombre y Edad.</p>
+    <p>El nombre no puede estar vacío y la edad debe ser igual o superior a 18.</p>
+    <p>Si los datos no son válidos, muestra un mensaje mediante alert.</p>
+
+    <form id="formularioAlumno">
+        <label for="nombreAlumno">Nombre:</label>
+        <input type="text" id="nombreAlumno">
+
+        <label for="edadAlumno">Edad:</label>
+        <input type="number" id="edadAlumno">
+
+        <button type="submit">Registrar alumno</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+            </tr>
+        </thead>
+        <tbody id="tablaAlumnos"></tbody>
+    </table>
+
+</body>
+</html>
