@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de la Compra</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="javascript.js" defer> </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de la Compra</h1>
+        <div class="input-section">
+            <label for="product-input">Añadir producto (formato: producto, precio):</label>
+            <input type="text" id="product-input" placeholder="Ej: Manzanas, 2.50">
+            <button id="add-btn">Añadir Producto</button>
+        </div>
+        
+        <div class="product-list">
+            <h2>Productos:</h2>
+            <ul id="product-list">
+                <li>
+                    <span>Platanos</span>
+                    <span>1.99 €</span>
+                    <button class="delete-btn" >Eliminar</button>  
+                </li> 
+            </ul>
+        </div>       
+
+        <div class="totals">
+            <p>Total Unidades: <span id="total-units">0</span></p>
+            <p>Total Precio: <span id="total-price">0.00</span> €</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posición del ratón en tiempo real</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="coordenadas.js" defer></script>
+</head>
+<body>
+    <main class="card">
+        <header class="card__header">
+            <h1>Posición del ratón</h1>
+            <p class="card__subtitle">Mueve el cursor por la ventana para ver sus coordenadas en tiempo real</p>
+        </header>
+
+        <ul class="coords">
+            <li class="coords__item coords__item--x">
+                <span class="coords__label">X</span>
+                <span class="coords__value" id="idInfoX">—</span>
+            </li>
+            <li class="coords__item coords__item--y">
+                <span class="coords__label">Y</span>
+                <span class="coords__value" id="idInfoY">—</span>
+            </li>
+        </ul>
+
+        <footer class="card__footer">
+            <span class="dot"></span> Escuchando movimiento del ratón…
+        </footer>
+    </main>
+</body>
+</html>

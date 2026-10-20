@@ -6,7 +6,17 @@ function soloIda() {
     let campoFechaVuelta = document.getElementById("fechaVuelta")
     //Si se el checkbox de soloIda está marcado, se desactiva el campoFechaVuelta
     campoFechaVuelta.disabled = checkBoxSoloIda.checked;
+    campoFechaVuelta.value = null
 }
+
+document.getElementById("swapButton").addEventListener("click", (e) => {
+    e.preventDefault()
+    let campoOrigen = document.getElementById("origen")
+    let campoDestino = document.getElementById("destino")
+    let aux = campoOrigen.value
+    campoOrigen.value = campoDestino.value
+    campoDestino.value = aux
+})
 
 function buscarTrayectos(event) {
     event.preventDefault()

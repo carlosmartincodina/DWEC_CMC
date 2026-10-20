@@ -1,5 +1,5 @@
 const lista = document.querySelector("ul")
-let contador = 4
+let contador = 1
 let boton = document.getElementById("boton")
 boton.addEventListener("click", organizar)
 
