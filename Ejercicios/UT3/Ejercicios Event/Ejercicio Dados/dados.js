@@ -13,12 +13,12 @@ let infoPartida=null;
 let ganador=null;
 let perdedor=null;
 
-let horas = window.setInterval(hora,1000)
+let horas = window.setInterval(hora,100)
 
 function hora() {
 	let fecha = new Date()
 	//Cogemos el id de la hora, incrustamos la hora y con la variable de arriba se actualiza cada segundo
-	document.getElementById("idReloj").innerHTML =`Hora: ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}`
+	document.getElementById("idReloj").innerHTML =`Hora: ${String(fecha.getHours()).padStart(2,"0")}:${String(fecha.getMinutes()).padStart(2,"0")}:${String(fecha.getSeconds()).padStart(2,"0")}`
 }
 
 function iniciar(){
@@ -154,13 +154,73 @@ function generarNumeroAleatorio(){
 *  APARTADO  3  : Listado de jugadores	
 *******************************************************/
 
+let jugadores = new Map()
+function gestionJugadores() {
+	//Sacamos el value de los jugadores
+	let jugador1 = document.getElementById("idInputNombreJ1").value
+	let jugador2 = document.getElementById("idInputNombreJ2").value
+
+
+	let tablaJugadores = document.getElementById("idNombreJugadores").textContent
+	tablaJugadores = tablaJugadores.split(", ")
+	let jugadores = new Set(tablaJugadores)
+	jugadores.add(jugador1)
+	jugadores.add(jugador2)
+
+	let textoAañadir = ""
+	let contador = 0
+
+	jugadores.forEach((e) => {
+		if (contador === jugadores.size - 1) {
+			textoAañadir+=e
+		} else {
+			textoAañadir+=e+", "
+			contador++
+		}
+	})
+
+	document.getElementById("idNombreJugadores").innerHTML=textoAañadir
+	
+
+
+}
  
 
  /********************************************************
 *  APARTADO  4  : Mostrar resultados	
 *******************************************************/
 
+function gestionPuntuacion() {
+	let abuelo = document.getElementById("idEstadisticas")
+	let padre = document.createElement("tr")
+	let hijo = document.createElement("td")
 
+	let ganador = document.createElement("td")
+	let perdedor = document.createElement("td")
+	let puntuacion = document.createElement("td")
+	if (puntos_j1 === puntos_j2) {
+		ganador.textContent = document.getElementById("idInputNombreJ1").value
+		perdedor.textContent = document.getElementById("idInputNombreJ2").value
+		puntuacion.textContent = `${puntos_j1} - ${puntos_j2}`
+	} else if (puntos_j1 > puntos_j2) {
+		ganador.textContent = document.getElementById("idInputNombreJ1").value
+		perdedor.textContent = document.getElementById("idInputNombreJ2").value
+		puntuacion.textContent = `${puntos_j1} - ${puntos_j2}`
+	} else if (puntos_j1 < puntos_j2) {
+		ganador.textContent = document.getElementById("idInputNombreJ2").value
+		perdedor.textContent = document.getElementById("idInputNombreJ1").value
+		puntuacion.textContent = `${puntos_j2} - ${puntos_j1}`
+	}
+
+	padre.appendChild(puntuacion)
+	padre.appendChild(ganador)
+	padre.appendChild(perdedor)
+	abuelo.appendChild(padre)
+}
+document.getElementById("idEstadisticas").addEventListener("click", ((e) => {
+	//Obtiene el valor sobre el que se hace click y elimina el padre
+	e.target.parentElement.remove()
+}))
 
 
 /*************************************************************
@@ -193,13 +253,4 @@ function generarNumeroAleatorio(){
 	}
 
 	return true;
-}
-
-function gestionPuntuacion() {
-	//Usando funciones del DOM
-	let padreTr = document.createElement("tr")
-	let hijoTd1 = document.createElement("td")
-	let hijoTd2 = document.createElement("td")
-
-	hijoTd1.innerHTML=`${puntos_j1}-${puntos_j2}`
 }

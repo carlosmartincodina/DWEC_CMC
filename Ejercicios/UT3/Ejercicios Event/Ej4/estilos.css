@@ -1,0 +1,114 @@
+/* Variables para mantener un diseño consistente */
+:root {
+    --bg-color: #e2e8f0;
+    --panel-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --accent: #3b82f6;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Patrón de cuadrícula de fondo */
+    background-image: 
+        linear-gradient(#cbd5e1 1px, transparent 1px),
+        linear-gradient(90deg, #cbd5e1 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Contenedor principal con sombra estilo ventana */
+.escritorio {
+    background: var(--panel-bg);
+    padding: 2rem 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1), 
+                0 1px 3px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+    border: 1px solid #f1f5f9;
+}
+
+/* Textos de cabecera */
+.cabecera h1 {
+    font-size: 1.8rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.cabecera p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+}
+
+.cabecera em {
+    color: var(--accent);
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* Zona donde están los elementos */
+.zona-trabajo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 250px;
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: #f8fafc;
+    border: 2px dashed #cbd5e1;
+}
+
+/* Papelera */
+.contenedor-papelera {
+    padding: 1rem;
+    border-radius: 50%;
+    transition: transform 0.2s ease;
+}
+
+.contenedor-papelera:hover {
+    transform: scale(1.05);
+}
+
+.papelera-img {
+    max-width: 180px;
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+    /* Evita que la imagen parpadee al cambiar de src */
+    -webkit-user-drag: none; 
+    user-select: none;
+}
+
+/* Papel arrugado (Elemento arrastrable) */
+.papel-img {
+    max-width: 140px;
+    height: auto;
+    cursor: grab;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.15));
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.papel-img:hover {
+    transform: translateY(-5px) rotate(5deg);
+    filter: drop-shadow(0 15px 20px rgba(0,0,0,0.2));
+}
+
+.papel-img:active {
+    cursor: grabbing;
+    transform: scale(0.95);
+}
