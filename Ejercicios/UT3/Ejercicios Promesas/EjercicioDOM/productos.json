@@ -1,0 +1,19 @@
+{
+  "productos": [
+    { "id": 1, "nombre": "Manzanas", "precio": 1.50 },
+    { "id": 2, "nombre": "Pan", "precio": 0.80 },
+    { "id": 3, "nombre": "Leche", "precio": 1.20 },
+    { "id": 4, "nombre": "Huevos", "precio": 2.50 },
+    { "id": 5, "nombre": "Arroz", "precio": 1.80 },
+    { "id": 6, "nombre": "Pasta", "precio": 1.00 },
+    { "id": 7, "nombre": "Aceite", "precio": 3.50 },
+    { "id": 8, "nombre": "Azúcar", "precio": 1.30 },
+    { "id": 9, "nombre": "Sal", "precio": 0.60 },
+    { "id": 10, "nombre": "Café", "precio": 4.20 },
+    { "id": 11, "nombre": "Queso", "precio": 3.80 },
+    { "id": 12, "nombre": "Jamón", "precio": 5.50 },
+    { "id": 13, "nombre": "Pollo", "precio": 6.00 },
+    { "id": 14, "nombre": "Pescado", "precio": 8.50 },
+    { "id": 15, "nombre": "Verduras", "precio": 2.00 }
+  ]
+}

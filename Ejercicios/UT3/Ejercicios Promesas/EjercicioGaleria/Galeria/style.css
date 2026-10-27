@@ -1,0 +1,202 @@
+:root {
+  --primary-color: #1a1a1a;
+  --accent-color: #ff6b6b;
+  --text-color: #ffffff;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --border-radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+}
+
+/* Contenedor principal de filas */
+body > div {
+  height: 25%;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  position: relative;
+}
+
+/* Estilos para las imágenes miniaturas */
+.imagen {
+  flex: 1;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(45deg, #2a2a2a, #3a3a3a);
+}
+
+.imagen:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow);
+  z-index: 100;
+}
+
+.imagen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.imagen:hover::before {
+  opacity: 1;
+}
+
+/* Imagen principal (oculta inicialmente) */
+.principal {
+  display: none;
+}
+
+/* Imagen expandida */
+.expandir {
+  display: block;
+  position: fixed;
+  
+  /* 1. ELIMINA: object-fit y object-position ya no son necesarios si el contenedor mide lo mismo que la imagen */
+  
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  
+  /* 2. CORRECCIÓN: Deja que el tamaño sea automático según el archivo de imagen */
+  width: auto;
+  height: auto;
+  
+  z-index: 2000;
+  border-radius: var(--border-radius);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 0 100vmax rgba(0, 0, 0, 0.8);
+  animation: modalAppear 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  cursor: zoom-out;
+}
+
+
+@keyframes modalAppear {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+
+/* Efecto oscurecer para miniaturas */
+.oscurecer {
+  opacity: 0.3;
+  transform: scale(0.95);
+  filter: blur(1px);
+  transition: var(--transition);
+}
+
+.oscurecer:hover {
+  opacity: 0.5;
+  transform: scale(0.98);
+  filter: blur(0.5px);
+}
+
+/* Efecto de carga para imágenes */
+.imagen:not([src]) {
+  background: linear-gradient(90deg, #2a2a2a 25%, #3a3a3a 50%, #2a2a2a 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body > div {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 25%;
+  }
+  
+  .imagen {
+    flex: 1 1 calc(50% - 8px);
+    min-height: 120px;
+  }
+  
+  .expandir {
+    width: 95vw;
+    height: auto;
+    max-height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .imagen {
+    flex: 1 1 100%;
+  }
+  
+  body > div {
+    gap: 4px;
+    padding: 4px;
+  }
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mejoras de accesibilidad */
+.imagen:focus {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.expandir:focus {
+  outline: 3px solid var(--accent-color);
+}
+
+/* Efecto de partículas de fondo opcional */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(255, 107, 107, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 107, 107, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: -1;
+}
