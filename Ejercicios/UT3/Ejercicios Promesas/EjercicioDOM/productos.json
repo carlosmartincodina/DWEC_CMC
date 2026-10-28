@@ -14,6 +14,7 @@
     { "id": 12, "nombre": "Jamón", "precio": 5.50 },
     { "id": 13, "nombre": "Pollo", "precio": 6.00 },
     { "id": 14, "nombre": "Pescado", "precio": 8.50 },
-    { "id": 15, "nombre": "Verduras", "precio": 2.00 }
+    { "id": 15, "nombre": "Verduras", "precio": 2.00 },
+    { "id": 16, "nombre": "Cereales", "precio": 229.49 }
   ]
 }
