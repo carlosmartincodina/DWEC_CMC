@@ -1,0 +1,66 @@
+/* Configuración general y fondo con degradado espacial */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f0f0f0;
+    background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+    min-height: 100vh;
+    overflow: hidden; /* Evita que aparezcan barras de scroll al mover la caja */
+}
+
+/* Panel de instrucciones en la esquina superior */
+.instrucciones {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 25px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    pointer-events: none; /* Permite hacer clic "a través" del panel */
+    z-index: 10;
+}
+
+.instrucciones h1 {
+    margin: 0 0 8px 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #38bdf8; /* Azul neón */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.instrucciones p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    line-height: 1.4;
+}
+
+.instrucciones strong {
+    color: #f8fafc;
+}
+
+/* Estilo de la caja */
+#idCaja {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    
+    /* Estética mejorada: gradiente, bordes suaves y sombra brillante */
+    background: linear-gradient(135deg, #f43f5e, #be123c);
+    border: 2px solid #fda4af;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(244, 63, 94, 0.4), 
+                inset 0 0 10px rgba(255, 255, 255, 0.2);
+    
+    /* Transición suave para que el movimiento no se vea tosco */
+    transition: top 0.1s ease-out, left 0.1s ease-out;
+    z-index: 20;
+}

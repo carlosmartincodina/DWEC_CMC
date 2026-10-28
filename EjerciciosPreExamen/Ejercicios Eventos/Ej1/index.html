@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Evento Click</title>
+      <script src="main.js" defer> </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 22px;
+        }
+
+        .contenedor {
+            height: 358px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tarjeta {
+            background-color: blue;
+            width: 280px;
+            padding: 20px 20px;
+            border-radius: 9px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        button {
+            padding: 10px 24px;
+            background-color: transparent;
+            border: 2px solid #444;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        p {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor" id="fondo">
+        <div class="tarjeta">
+            <h3>Gestor de Evento Click</h3>
+
+            <button id="boton">Púlsame</button>
+
+            <p>
+                Haz clic en el botón para cambiar el color de fondo.<br>
+                Haz clic en cualquier otra parte para volver al color blanco.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
