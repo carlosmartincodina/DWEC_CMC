@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frameworks de Programación</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <header>
+        <h2>Seleccionada opción: <span id="opcionSeleccionada"></span></h2>
+    </header>
+
+    <main>
+        <section>
+            <h1>Frameworks de Programación</h1>
+
+            <div class="opciones">
+                <input type="radio" id="frontend" name="ambito" value="Frontend">
+                <label for="frontend">Frontend</label>
+
+                <input type="radio" id="backend" name="ambito" value="Backend">
+                <label for="backend">Backend</label>
+            </div>
+        </section>
+
+        <section>
+            <h2 id="tituloFrameworks"></h2>
+            <ul id="idLista" class="framework-lista">
+                <li></li>
+            </ul>
+        </section>
+    </main>
+
+</body>
+</html>

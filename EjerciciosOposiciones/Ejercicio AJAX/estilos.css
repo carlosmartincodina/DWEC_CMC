@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #34495e;
+    background-color: white;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    padding: 15px;
+    margin: 0 auto 30px;
+    max-width: 1000px;
+    text-align: center;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 28px;
+    color: black;
+}
+
+main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    background-color: #f5f6fa;
+    padding: 25px;
+    margin: 0 0 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.opciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    background-color: #f5f6fa;
+    margin-bottom: 30px;
+}
+
+input[type="radio"] {
+    accent-color: #3498db;
+}
+
+label {
+    margin-right: 25px;
+    color: #34495e;
+    cursor: pointer;
+}
+
+section {
+    margin: 0 auto 30px;
+}
+
+.framework-lista {
+    list-style: none;
+    padding: 0;
+    max-width: 480px;
+    margin: 20px auto;
+}
+
+.framework-elemento {
+    background-color: #f5f7fa;
+    padding: 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.framework-elemento::before {
+    content: "•";
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 6px;
+}
