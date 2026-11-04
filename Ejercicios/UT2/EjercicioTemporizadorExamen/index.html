@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador Regresivo</title>
+    <script src="main.js" defer></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 32px;
+            color: #212529;
+        }
+
+        .contenedor {
+            max-width: 538px;
+            margin: 0 auto;
+            border: 1px solid #333;
+            padding: 32px 9px 25px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 30px;
+            margin: 0 0 20px;
+        }
+
+        .descripcion {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .boton {
+            display: inline-block;
+            background-color: #0d6efd;
+            color: white;
+            padding: 12px 17px;
+            border-radius: 6px;
+            border: none;
+            font-size: 16px;
+            text-decoration: none;
+            margin-bottom: 30px;
+        }
+
+        .mensaje {
+            background-color: #f8f9fa;
+            padding: 13px;
+            border-radius: 5px;
+            margin-bottom: 23px;
+            font-size: 16px;
+        }
+
+        .instrucciones {
+            background-color: #e9ecef;
+            padding: 25px 12px;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .instrucciones h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .instrucciones ul {
+            padding-left: 33px;
+            line-height: 21px;
+        }
+        .boton {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.boton:hover {
+    background-color: #0b5ed7;
+}
+
+.boton:active {
+    background-color: #0a58ca;
+    transform: scale(0.98);
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>⏰ Contador Regresivo</h1>
+
+        <p class="descripcion">
+            La cuenta atrás se mostrará únicamente en la consola del navegador
+        </p>
+
+        <button class="boton">
+            Iniciar Contador
+        </button>
+
+        <div class="mensaje">
+            Presiona el botón para iniciar el contador
+        </div>
+
+        <div class="instrucciones">
+
+            <h3>Instrucciones:</h3>
+
+            <ul>
+                <li>Haz clic en "Iniciar Contador"</li>
+                <li>Ingresa un número en el prompt</li>
+                <li>La cuenta regresiva aparecerá en la consola</li>
+                <li>Al finalizar, verás un mensaje con la fecha actual en un alert</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
