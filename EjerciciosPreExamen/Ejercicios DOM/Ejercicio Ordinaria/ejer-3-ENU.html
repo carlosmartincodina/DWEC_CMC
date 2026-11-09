@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Ejercicio3.js" defer></script>
+    <title>Lista de Compra Interactiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .search-section {
+            margin-bottom: 20px;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .error {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .product-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        
+        .product-item {
+            padding: 12px;
+            margin: 8px 0;
+            background: #ecf0f1;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .product-item:hover {
+            background: #d5dbdb;
+        }
+        
+        .nuevo-producto-rojo {
+            background: #ffebee !important;
+            border-left-color: #e74c3c !important;
+            color: #c0392b;
+            font-weight: bold;
+        }
+        
+        .summary {
+            background: #34495e;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .summary h3 {
+            margin-top: 0;
+        }
+        
+        .product-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .product-name {
+            flex-grow: 1;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛒 Lista de Compra Interactiva</h1>
+        
+        <div class="search-section">
+            <label for="productSelect">Selecciona un producto:</label>
+            <select id="productSelect">
+                <option value="">-- Selecciona un producto --</option>
+            </select>            
+        </div>
+        
+        <div>
+            <h3>Tu Lista de Compra:</h3>
+            <ul class="product-list" id="productoList"></ul>
+        </div>
+        
+        <div class="summary">
+            <h3>Resumen</h3>
+            <p>Total de productos: <span id="totalProductos">0</span></p>
+            <p>Importe total: <span id="importeTotal">0.00</span>€</p>
+        </div>
+    </div>   
+</body>
+</html>
