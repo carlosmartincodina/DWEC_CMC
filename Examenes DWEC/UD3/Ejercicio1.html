@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Frameworks</title>
+    <link rel="stylesheet" href="ejercicio1.css">
+    <script src="Ejercicio1.js" defer></script>
+</head>
+<body>
+    <h1>Frameworks de Programación</h1>
+    
+    <!-- Radio Buttons -->
+    <div id="ambito" class="selector-ambito">
+        <label>
+            <input type="radio" name="tipo-ambito" value="Frontend" checked> Frontend
+        </label>
+        <label>
+            <input type="radio" name="tipo-ambito" value="Backend"> Backend
+        </label>
+        <label>
+            <input type="radio" name="tipo-ambito" value="Fullstack"> Fullstack
+        </label>
+    </div>
+
+    <!-- Lista de Frameworks -->
+    <div id="resultado">
+        <h2>Frameworks</h2>
+        <ul class="framework-lista"></ul>
+    </div>
+
+    <!-- Histórico -->
+    <div id="historico" class="panel-historico">
+        <p>Me gustan: <span id="contador-gustan" class="verde">0</span></p>
+        <p>No me gustan: <span id="contador-no-gustan" class="rojo">0</span></p>
+    </div>
+</body>
+</html>

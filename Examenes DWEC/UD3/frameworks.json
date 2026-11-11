@@ -1,0 +1,11 @@
+[
+    { "lenguaje": "JavaScript", "framework": "React", "ambito": "Frontend" },
+    { "lenguaje": "JavaScript", "framework": "Vue", "ambito": "Frontend" },
+    { "lenguaje": "JavaScript", "framework": "Angular", "ambito": "Frontend" },
+    { "lenguaje": "Python", "framework": "Django", "ambito": "Backend" },
+    { "lenguaje": "Python", "framework": "Flask", "ambito": "Backend" },
+    { "lenguaje": "PHP", "framework": "Laravel", "ambito": "Backend" },
+    { "lenguaje": "JavaScript", "framework": "Next.js", "ambito": "Fullstack" },
+    { "lenguaje": "Python", "framework": "FastAPI", "ambito": "Fullstack" },
+    { "lenguaje": "Java", "framework": "Spring Boot", "ambito": "Backend" }
+  ]

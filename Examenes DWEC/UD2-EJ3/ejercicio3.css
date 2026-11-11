@@ -1,0 +1,67 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f9;
+}
+
+/* Panel de coordenadas fijo en la esquina */
+#panel-coordenadas {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #00ff00;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+/* Zona donde se dibujarán las letras */
+#zona-dibujo {
+    margin-top: 80px;
+    min-height: 400px;
+    background-color: white;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: flex-start;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+/* --- NUEVA CLASE DE ESTADO --- */
+/* Esta clase se aplica cuando el ratón está en las coordenadas exactas */
+#zona-dibujo.desbloqueado {
+    border-color: #2a9d8f;
+    background-color: #f0fdf4;
+}
+
+/* Estilo para el mensaje de aviso */
+#mensaje-desbloqueo {
+    color: #2a9d8f;
+    font-weight: bold;
+    width: 100%; /* Para que ocupe toda la línea */
+    margin: 0;
+}
+
+/* Estilo de cada letra dibujada */
+.letra-dibujada {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e63946;
+    background-color: #ffe5e5;
+    padding: 5px 15px;
+    border-radius: 5px;
+    animation: aparecer 0.3s ease-out;
+}
+
+@keyframes aparecer {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
