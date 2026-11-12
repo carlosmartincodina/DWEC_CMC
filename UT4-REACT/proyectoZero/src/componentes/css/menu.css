@@ -1,0 +1,52 @@
+.menu {
+    background-color: #1e1e2f;
+    padding: 20px 30px;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu li {
+    color: #b8b8c7;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Efecto hover */
+.menu li:hover {
+    color: #8b7cff;
+}
+
+/* Línea morada debajo de cada opción */
+.menu li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 2px;
+    background-color: #8b7cff;
+    transition: width 0.3s ease;
+}
+
+.menu li:hover::after {
+    width: 100%;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 480px) {
+    .menu ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
